@@ -170,9 +170,9 @@ function render(): void {
 
 export function reset(immediate = false): void {
   if (!isSafeNumber(ctx.resetTimeOut)) return;
+  clearTimeout(ctx.resetTimeOut);
   delete ctx.resetTimeOut;
 
-  clearTimeout(ctx.resetTimeOut);
   body.setStyle({
     transition: "all .25s, transform 0.8s",
     transform: "translate(0,0)",
